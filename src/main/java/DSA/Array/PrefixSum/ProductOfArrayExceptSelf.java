@@ -27,3 +27,29 @@ public class ProductOfArrayExceptSelf {
         return ans;
     }
 }
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] prefixSum = new int[n];
+        int[] postfixSum = new int[n];
+        int[] ans = new int[n];
+
+        prefixSum[0] = 1;
+        postfixSum[n - 1] = 1;
+
+        for(int i = 1; i < n; i++) {
+            prefixSum[i] = prefixSum[i-1] * nums[i-1];
+        }
+
+        for(int i = n-2; i >= 0; i--) {
+            postfixSum[i] = postfixSum[i+1] * nums[i+1];
+        }
+
+        for(int k = 0; k < n; k++) {
+            ans[k] = prefixSum[k] * postfixSum[k];
+        }
+        
+        return ans;
+    }
+}
