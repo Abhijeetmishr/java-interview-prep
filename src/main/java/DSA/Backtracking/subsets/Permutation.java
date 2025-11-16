@@ -1,4 +1,4 @@
-package DSA.Backtracking;
+package DSA.Backtracking.subsets;
 
 import java.util.ArrayList;
 import java.util.List;
