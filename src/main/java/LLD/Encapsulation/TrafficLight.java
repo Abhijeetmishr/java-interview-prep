@@ -1,4 +1,4 @@
-package Encapsulation.TrafficLight;
+package LLD.Encapsulation;
 
 public class TrafficLight {
     private String currentColor;
